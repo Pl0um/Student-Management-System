@@ -2,6 +2,7 @@ public class Enrollment {
     private Student student;
     private Course course;
 
+    // constructor
     public Enrollment(Student student, Course course) {
         this.student = student;
         this.course = course;
@@ -10,7 +11,7 @@ public class Enrollment {
     public void register() {
         course.enrollStudent(student);
     }
-
+    // getters et setters
     public Student getStudent() {
         return student;
     }

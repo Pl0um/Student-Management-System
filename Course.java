@@ -7,6 +7,7 @@ public class Course{
     private int creditHours;
     private List<Student> students;
 
+    // constructor
     public Course(String courseName, String courseCode, int creditHours) {
         this.courseName = courseName;
         this.courseCode = courseCode;
@@ -18,7 +19,7 @@ public class Course{
         students.add(student);
     }
 
-
+    // getters et setters
     public List<Student> getEnrolledStudents() {
         return students;
     }

@@ -6,7 +6,7 @@ public class Student extends Person {
     // private int age;
     private List<Float> grades;
 
-
+    // constructor
     public Student(String name, int age, String studentID) {
         super(name, age);
         this.studentID = studentID;
@@ -23,15 +23,15 @@ public class Student extends Person {
             return 0;
         }
         else {
-        float average =0;
-        for (int i = 0 ; i < grades.size();i++){
+        float average = 0;
+        for (int i = 0 ; i < grades.size();i++ ){
             average += grades.get(i);
         }
         average /= grades.size();
         return average;
     }
 }
-
+    // getters et setters
     public String getStudentID() {
         return studentID;
     }
