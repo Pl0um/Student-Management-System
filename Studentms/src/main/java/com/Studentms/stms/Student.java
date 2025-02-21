@@ -1,3 +1,5 @@
+package com.Studentms.stms;
+
 import java.util.*;
 
 public class Student extends Person {

@@ -1,3 +1,5 @@
+package com.Studentms.stms;
+
 public class StudentTest {
     public static void main(String[] args) {
         // Create a new student

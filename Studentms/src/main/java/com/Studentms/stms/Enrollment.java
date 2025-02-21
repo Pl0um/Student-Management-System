@@ -1,3 +1,5 @@
+package com.Studentms.stms;
+
 public class Enrollment {
     private Student student;
     private Course course;
