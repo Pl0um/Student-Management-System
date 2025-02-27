@@ -1,9 +1,11 @@
 package com.Studentms.stms;
 
 import com.Studentms.stms.model.Student;
+import com.Studentms.stms.model.UndergraduateStudent;
 import com.Studentms.stms.model.Course;
 import com.Studentms.stms.model.Enrollment;
 import com.Studentms.stms.model.EnrollmentRequest;
+import com.Studentms.stms.model.GraduateStudent;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,6 +29,22 @@ public class API {
         return newstudent;
     }
 
+
+        // Endpoint to create a new graduate student
+    @PostMapping("/graduate-students")
+    public GraduateStudent createGraduateStudent(@RequestBody GraduateStudent graduateStudent) {
+        students.add(graduateStudent);
+        return graduateStudent;
+    }
+
+    
+    // Endpoint to create a new undergraduate student
+    @PostMapping("/undergraduate-students")
+    public UndergraduateStudent createUndergraduateStudent(@RequestBody UndergraduateStudent undergraduateStudent) {
+        students.add(undergraduateStudent);
+        return undergraduateStudent;
+    }
+
     // Endpoint to get all students
     @GetMapping("/students")
     public List<Student> getStudents() {
@@ -42,6 +60,28 @@ public class API {
         }
         return null;
     }
+
+        // Endpoint to add a grade to a student
+        @PostMapping("/students/{id}/grades")
+        public Student addGrade(@PathVariable String id, @RequestBody float grade) {
+            Student student = getStudentById(id);
+            if (student != null) {
+                student.addGrade(grade);
+            }
+            return student;
+        }
+        
+        // Endpoint to get a student's average grade
+        @GetMapping("/students/{id}/average-grade")
+        public float getAverageGrade(@PathVariable String id) {
+            Student student = getStudentById(id);
+            if (student != null) {
+                return student.getAverageGrade();
+            }
+            return 0;
+        }
+
+
 
     // Endpoint to create a new course
     @PostMapping("/courses")
@@ -97,6 +137,14 @@ public Enrollment enrollStudent(@RequestBody EnrollmentRequest enrollmentRequest
         return enrollments;
     }
 
-    
+        // Get all students enrolled in a specific course
+    @GetMapping("/courses/{id}/students")
+    public List<Student> getStudentsInCourse(@PathVariable String id) {
+        Course course = getCourseById(id);
+        if (course != null) {
+            return course.getEnrolledStudents();
+        }
+        return new ArrayList<>();
+    }
 
 }
