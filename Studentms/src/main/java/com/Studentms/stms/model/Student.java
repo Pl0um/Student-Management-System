@@ -1,11 +1,9 @@
-package com.Studentms.stms;
+package com.Studentms.stms.model;
 
 import java.util.*;
 
 public class Student extends Person {
-    // private String name;
     private String studentID;
-    // private int age;
     private List<Float> grades;
 
     // constructor
@@ -44,5 +42,8 @@ public class Student extends Person {
 
     public List<Float> getGrades() {
         return grades;
+    }
+    public void setGrades(List<Float> grades) {
+        this.grades = grades;
     }
 }

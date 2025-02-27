@@ -1,4 +1,4 @@
-package com.Studentms.stms;
+package com.Studentms.stms.model;
 
 import java.util.*;
 

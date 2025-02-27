@@ -1,4 +1,4 @@
-package com.Studentms.stms;
+package com.Studentms.stms.model;
 
 public abstract class Person{
     private String name;
@@ -9,7 +9,7 @@ public abstract class Person{
         this.name = name;
         this.age = age;
     }
-    // getters et setters
+    // getters, setters
     public String getName() {
         return name;
     }
